@@ -103,42 +103,41 @@ commands
 
 ### 1. Get kernel from web [kernel.org](https://kernel.org)
 
-| |
-|-|
-|`wget https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.11.tar.xz`|
+<table>
+    <tr><td><code>wget https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.11.tar.xz</code></td></tr>
+</table>
 
 ### 2. Unpack kernel
 
-| | |
-|-|-|
-|`xz -d linux-5.11.tar.xz`|decompress archive|
-|`tar -xf linux-5.11.tar`|split file to directory|
-|`ln -s /usr/src/linux-5.11 linux`|make symbolic link for build|
-|`cd /usr/src/linux`|go to build dir|
+<table>
+    <tr><td><code>xz -d linux-5.11.tar.xz</code></td><td>decompress archive</td></tr>
+    <tr><td><code>tar -xf linux-5.11.tar</code></td><td>split file to directory</td></tr>
+    <tr><td><code>ln -s /usr/src/linux-5.11 linux</code></td><td>make symbolic link for build</td></tr>
+    <tr><td><code>cd /usr/src/linux</code></td><td>go to build dir</td></tr>
+</table>
 
 ### 3. Create configuration
 
-| | |
-|-|-|
-|`make localmodconfig`|use current config|
-|`make menuconfig`|show menu to configure (don't forget to save)|
+<table>
+    <tr><td><code>make localmodconfig</code></td><td>use current config</td></tr>
+    <tr><td><code>make menuconfig</code></td><td>show menu to configure (don't forget to save)</td></tr>
+</table>
 
 ### 4. Build kernel
 
-| | |
-|-|-|
-|`make -j 36`|build using 36 parallel tasks (+- 2 * Logical processors)|
-|`make -j 36 modules`|build drivers & addons|
+<table>
+    <tr><td><code>make -j 36</code></td><td>build using 36 parallel tasks (+- 2 * Logical processors)</td></tr>
+    <tr><td><code>make -j 36 modules</code></td><td>build drivers & addons</td></tr>
+</table>
 
 ### 5. Install kernel
 
-| | |
-|-|-|
-|`make -j 36 modules_install`|/lib/modules/|
-|`make -j 36 install`|/boot/|
-|`reboot`|finaly reboot system and boot to your new kernel|
-|`cat /proc/version`|check current kernel version|
-
+<table>
+    <tr><td><code>make -j 36 modules_install</code></td><td>/lib/modules/</td></tr>
+    <tr><td><code>make -j 36 install</code></td><td>/boot/</td></tr>
+    <tr><td><code>reboot</code></td><td>finaly reboot system and boot to your new kernel</td></tr>
+    <tr><td><code>cat /proc/version</code></td><td>check current kernel version</td></tr>
+</table>
 
 ---
 
