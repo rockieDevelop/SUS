@@ -11,6 +11,7 @@ Will be updated continuously.
 # Commands
 
 ## Terminal Key Bindings
+
 |Keys|Action|
 |----|------|
 |`UP Arrow`, `DOWN Arrow`|moving throught personal command history|
@@ -21,15 +22,6 @@ Will be updated continuously.
 |`CTRL + Y`|restore previous text|
 |`CTRL + W`|cut word before cursor|
 |`ALT + .`|paste last command args|
-
-## Packages
-
-|Command / Location|Description|
-|------------------|-----------|
-|`apt update`|update local repositories packages lists|
-|`apt install package_name`|install package|
-|`apt upgrade`|update packages in system|
-|`apt dist-upgrade`|update system packages|
 
 ## Utils
 
@@ -45,6 +37,33 @@ Will be updated continuously.
 |`~/.bashrc`|run commands on bash start for user (login, ssh, ...)|
 |`which bash`|prints command file location|
 |`watch command`|executes command in interval and shows output|
+
+## Power commands
+
+|Command / Location|Description|
+|------------------|-----------|
+|`shutdown`, `shutdown -h`|shutdown in minute|
+|`shutdown -h now`|shutdown now|
+|`shutdown -r`|reboot in minute|
+|`shutdown -r now`, `reboot`|reboot now|
+|`shutdown -c`|cancel pending shutdown|
+
+## Hardware
+|Command / Location|Description|
+|------------------|-----------|
+|`nvidia-smi`|Nvidia GPU info|
+|`lshw`|Hardware info|
+|`cat /proc/cpuinfo`|CPU info|
+|`neofetch`|System info|
+
+## Packages
+
+|Command / Location|Description|
+|------------------|-----------|
+|`apt update`|update local repositories packages lists|
+|`apt install package_name`|install package|
+|`apt upgrade`|update packages in system|
+|`apt dist-upgrade`|update system packages|
 
 ## Networking
 
@@ -64,6 +83,17 @@ Will be updated continuously.
 |`htop`|show processes with gui|
 |`kill -15 pid`|kill process|
 |`kill -9 pid`|kill process without mercy|
+
+## Services management
+
+|Command / Location|Description|
+|------------------|-----------|
+|`service service_name start/stop/restart/reload`|start/stop/restart/reload service|
+|`systemctl status service_name.service`|service status info|
+|`systemctl enable service_name.service`|enable service to run|
+|`systemctl daemon-reload`|reaload services configs|
+|`/etc/systemd/**/*.service`|services configuration files|
+|`journalctl --since yesterday -u service_name.service`|view service logs|
 
 ## Disk management
 
@@ -113,6 +143,29 @@ or
 #!/usr/bin/env bash
 
 commands
+```
+
+## Service file
+
+Configure service to run some script/file. Usefull for agents, servers, jobs, timers, ...
+[More info on how to create one.](https://medium.com/@benmorel/creating-a-linux-service-with-systemd-611b5c8b91d6).
+
+Basic structure
+```
+[Unit]
+Description=Service name
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=centos
+ExecStart=/usr/bin/env php /path/to/server.php
+
+[Install]
+WantedBy=multi-user.target
 ```
 
 ## Building kernel
