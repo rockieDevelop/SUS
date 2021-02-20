@@ -148,7 +148,8 @@ commands
 ## Service file
 
 Configure service to run some script/file. Usefull for agents, servers, jobs, timers, ...
-[More info on how to create one.](https://medium.com/@benmorel/creating-a-linux-service-with-systemd-611b5c8b91d6).
+
+[More info on how to create one.](https://medium.com/@benmorel/creating-a-linux-service-with-systemd-611b5c8b91d6)
 
 Basic structure
 ```
