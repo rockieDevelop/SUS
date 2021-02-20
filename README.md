@@ -10,6 +10,18 @@ Will be updated continuously.
 
 # Commands
 
+## Terminal Key Bindings
+|Keys|Action|
+|----|------|
+|`UP Arrow`, `DOWN Arrow`|moving throught personal command history|
+|`CTRL + C`|exit command|
+|`CTRL + Z`|stop command|
+|`CTRL + U`|cut text before cursor|
+|`CTRL + K`|cut text after cursor|
+|`CTRL + Y`|restore previous text|
+|`CTRL + W`|cut word before cursor|
+|`ALT + .`|paste last command args|
+
 ## Packages
 
 |Command / Location|Description|
@@ -23,25 +35,16 @@ Will be updated continuously.
 
 |Command / Location|Description|
 |------------------|-----------|
+|`!!`|execute last command|
 |`sudo`|execute as root|
+|`sudo !!`|execute last command as root|
 |`sudo -i`|switch to root|
 |`exit`|close current context|
 |`echo $PATH`|prints current path values|
 |`export PATH=$PATH:/sbin`|extend path with custom directory|
 |`~/.bashrc`|run commands on bash start for user (login, ssh, ...)|
 |`which bash`|prints command file location|
-
-## Disk management
-
-|Command / Location|Description|
-|------------------|-----------|
-|`mount`|show current mounted directories|
-|`cfdisk /dev/sdb`|partition disk|
-|`blkid`|get partitions ids and types|
-|`ncdu`|compute space in dir and subdirs, has gui|
-|`du -sh`|compute dir size|
-|`df`|show partitions usages|
-|`/etc/fstab`|automatic mount on boot (use `UUID` from `blkid`)|
+|`watch command`|executes command in interval and shows output|
 
 ## Networking
 
@@ -62,6 +65,18 @@ Will be updated continuously.
 |`kill -15 pid`|kill process|
 |`kill -9 pid`|kill process without mercy|
 
+## Disk management
+
+|Command / Location|Description|
+|------------------|-----------|
+|`mount`|show current mounted directories|
+|`cfdisk /dev/sdb`|partition disk|
+|`blkid`|get partitions ids and types|
+|`ncdu`|compute space in dir and subdirs, has gui|
+|`du -sh`|compute dir size|
+|`df`|show partitions usages|
+|`/etc/fstab`|automatic mount on boot (use `UUID` from `blkid`)|
+
 ## Files
 
 |Command / Location|Description|
@@ -70,6 +85,7 @@ Will be updated continuously.
 |`nano file_name`, `vim file_name`, `echo 'text' > file_name`|write file contents|
 |`ps > file_name`|redirect output to file (`write`)|
 |`ps >> file_name`|redirect output to file (`append`)|
+|`less +F file_name`|read file from end|
 
 ## Directories
 
