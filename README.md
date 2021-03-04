@@ -428,7 +428,7 @@ MENU TITLE  Boot Menu
 
 LABEL Debian - NetBoot
 KERNEL /Debian/vmlinuz-4.19.0-14-amd64
-APPEND initrd=/Debian/initrd.img-4.19.0-14-amd64 root=/dev/nfs nfsroot=192.168.26.2:/remote_root ip=dhcp rw
+APPEND initrd=/Debian/initrd.img-4.19.0-14-amd64 root=/dev/nfs nfsroot=192.168.26.2:/remote_root,udp ip=dhcp rw
 ```
 
 ### 12. Test boot from client
@@ -440,6 +440,16 @@ Try booting client, should load our kernel.
 Distable all interfaces in `/remote_root/etc/network/interfaces` except of `lo`.
 
 Remove disks in `/remote_root/etc/fstab`.
+
+### 14. Mounting additional drives
+
+Append `/home   192.168.57.0/24(rw,async)` to `/etc/exports` on server.
+
+Restart NFS service using `service nfs-kernel-server restart`.
+
+Append mount `192.168.26.2:/home    /home   nfs udp,intr` to client system `/remote_root/etc/fstab`.
+
+Check on client.
 
 ---
 
