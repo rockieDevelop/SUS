@@ -7,7 +7,7 @@
 ## Boot server
 
 Will be used for DHCP and for storing/distributing boot image to clients.
-![Network schema](images/network-boot-schema.png)
+![Network schema](../images/network-boot-schema.png)
 
 ## 1. Configure static IP Address
 
@@ -15,7 +15,7 @@ Will be used for DHCP and for storing/distributing boot image to clients.
     <tr><td><code>nano /etc/network/interfaces</code></td><td>edit network interfaces file</td></tr>
 </table>
 
-Append folowing lines to [file](files/network/interfaces_static). Change to fit your system and network.
+Append folowing lines to [file](../files/network/interfaces_static). Change to fit your system and network.
 
 This configures `enp0s8` interface to:
 
@@ -39,7 +39,7 @@ iface enp0s8 inet static
 
 ## 2. Setting up DHCP Server
 
-Configuration files [/etc/default/isc-dhcp-server](files/dhcp/isc-dhcp-server) and [/etc/dhcp/dhcpd.conf](files/dhcp/dhcpd.conf).
+Configuration files [/etc/default/isc-dhcp-server](../files/dhcp/isc-dhcp-server) and [/etc/dhcp/dhcpd.conf](../files/dhcp/dhcpd.conf).
 
 <table>
     <tr><td><code>apt install isc-dhcp-server</code></td><td>install dhcp server package</td></tr>

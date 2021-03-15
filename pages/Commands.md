@@ -70,7 +70,7 @@
 |`dhclient enp0s8`|run DHCP client on interface|
 |`dhclient -r`|renew DHCP IP Address|
 |`dhcp-lease-list`|list DHCP clients on server|
-|`/etc/network/interfaces`|permament interfaces configuration ([static](files/network/interfaces_static), [dhcp](files/network/interfaces_automatic))|
+|`/etc/network/interfaces`|permament interfaces configuration ([static](../files/network/interfaces_static), [dhcp](../files/network/interfaces_automatic))|
 |`nslookup domain [dns]`|get domain ip from dns server|
 
 ## Process management
