@@ -18,6 +18,7 @@ Will be updated continuously.
     4. [Building kernel](pages/BuildingKernel.md)
     5. [Network boot](pages/NetworkBoot.md)
     6. [DNS Server](pages/DNSServer.md)
+    7. [Lamp](pages/lamp.md)
 
 ---
 
