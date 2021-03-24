@@ -143,5 +143,5 @@ MediaWiki potrebuje doinstalovat balicky mbstring, xml a k php jeste pridat podp
 
 
 <p align="center">
-    <b><a href="https://github.com/rockieDevelop" target="_blank">rockieDevelop</a>2021</b>
+    <b><a href="https://github.com/rockieDevelop" target="_blank">rockieDevelop</a> 2021</b>
 </div>
