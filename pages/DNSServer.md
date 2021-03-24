@@ -141,5 +141,7 @@ v named.conf.local uvezt odkaz na soubor
 
 <p align="center">
     <b><a href="https://github.com/MGSE97" target="_blank">MGSE97</a> 🔥 2021</b>
+</div>
+<p align="center">
     <b>updated by <a href="https://github.com/rockieDevelop" target="_blank">rockieDevelop</a> 2021</b>
 </div>
