@@ -1,7 +1,7 @@
 # LAMP - Linux, Apache, MariaDB/MySQL, PHP
 
 ### nastavime ip nasi dns /etc/resolv.conf
-    namespace 192.168.56.101
+    nameserver 192.168.56.101
 
 ### upravime interfacy /etc/network/interfaces
     allow-hotplug enp0s3
