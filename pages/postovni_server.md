@@ -1,3 +1,5 @@
+pridani uzivatele - adduser user_name
+
 # Postovni server
 
 opet nastavit nasi dns v /ets/resolv.conf
