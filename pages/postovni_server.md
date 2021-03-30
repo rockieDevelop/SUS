@@ -106,6 +106,70 @@ maily se ted budou ukladat v domovskem adresari uzivatelu /home/saf0068/Maildir/
 
 # Server prichozi posty
 
+    apt install dovecot-imapd
+    
+## Konfigurace /etc/dovecot/conf.d/{nazev_souboru}
+
+uprava souboru /10-auth.conf
+    
+    disable_plaintext_auth = no #v realnem nasazeni nemyslitelne, ale pro zakladni implementaci si to muzeme dovolit
+    
+soubor /10-mail.conf
+
+    mail_location = maildir:~/Maildir/  #Postfix uklada ve formatu MailDir do domovskeho adresare do slozky Maildir - tam hledej
+    
+potreba resetovat sluzbu dovecot
+
+    service dovecot restart
+    
+pomoci utilitky netstat zjistime ze dovecot funguje na portech 993 a 143
+
+# Postovni klient
+
+## uprava DNS /etc/bind/db.saf0068.org
+
+    _imap._tcp  IN  SRV 1   2   143 imap.saf0068.org ; _http sluzba, _tcp protokol, 1 priorita, 2 vaha  #pokud pro domenu saf0068.org chces pouzit protokol IMAP, tak se zeptej serveru imap.saf0068.org na portu 143
+    _smtp._tcp  IN  SRV 1   2   25  smtp.saf0068.org    # pokud chces pouzit server odchozi posty SMTP, pak pouzij na portu 25 smtp.saf0068.org
+    
+muzeme overit treba pomoci thunderbird aplikace
+    
+## web-based klient
+ upravime LAMP server
+ 
+    apt install roundcube
+
+vytvorim tabulky pro uzivatele
+
+    mysql -u root -p
+    use mysql
+    CREATE USER 'roundcube'@'localhost' IDENTIFIED BY 'roundcube';
+    \q
+    
+    mysql -u root
+    CREATE DATABASE roundcube;
+    use roundcube
+    GRANT ALL ON roundcube.* TO roundcube@localhost;
+    
+### vytvoreni virtualni domeny pro roundcube /etc/apache2/sites-available
+
+    ServerName roundcube.saf0068.org
+    DocumentRoot /var/www/roundcube.saf0068.org
+
+povoleni domeny
+
+    a2ensite roundcube.saf0068.org
+
+ve /var/www vytvorit symbolicky link na misto kde je roundcube umisten
+
+    ln -s /usr/share/roundcube/ roundcube.saf0068.org
+    
+### Konfigurace roundcubu /etc/roundcube/config.inc.php
+
+    $config['default_host'] = 'imap.saf0068.org';
+    $config['smtp_server'] = 'smtp.saf0068.org';
+
+na roundcube domene by se mel zobrazit roundcube s jiz nadefinovanym serverem a melo by byt mozne se tam prihlasit
+
 <p align="center">
     <b><a href="https://github.com/rockieDevelop" target="_blank">rockieDevelop</a> 2021</b>
 </div>
