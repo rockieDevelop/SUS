@@ -167,7 +167,11 @@ ve /var/www vytvorit symbolicky link na misto kde je roundcube umisten
 
     ln -s /usr/share/roundcube/ roundcube.saf0068.org
     
-### Konfigurace roundcubu /etc/roundcube/defaults.inc.php
+v DNS konfiguraci potreba pripsat CNAME na roundcube
+    
+    roundcube   IN  CNAME   lamp.saf0068.org.
+    
+### Konfigurace roundcubu /etc/roundcube/config.inc.php
 
     $config['default_host'] = 'imap.saf0068.org';
     $config['smtp_server'] = 'smtp.saf0068.org';
