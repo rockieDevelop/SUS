@@ -9,7 +9,7 @@ a stejne take nastavit ip serveru v /etc/network/interfaces na .105
 # Postfix
 ## nastaveni ip adres pro SMTP
 
-v nasi DNS nastavime ip adresy smtp na nas postovni server
+v nasi DNS nastavime ip adresy smtp na nas postovni server /etc/bind/db.saf0068.org
 
     smtp    IN    A   192.168.56.105
     smtp2   IN    A   192.168.56.105
