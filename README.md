@@ -25,4 +25,6 @@ Will be updated continuously.
 
 <p align="center">
     <b><a href="https://github.com/MGSE97" target="_blank">MGSE97</a> 🔥 2021</b>
+<p align="center">
+    <b><a href="https://github.com/rockieDevelop" target="_blank">rockieDevelop</a> 2021</b>
 </div>
