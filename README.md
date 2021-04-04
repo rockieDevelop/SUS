@@ -19,6 +19,7 @@ Will be updated continuously.
     5. [Network boot](pages/NetworkBoot.md)
     6. [DNS Server](pages/DNSServer.md)
     7. [Lamp](pages/lamp.md)
+    8. [Postovni Server](pages/postovni_server.md)
 
 ---
 
