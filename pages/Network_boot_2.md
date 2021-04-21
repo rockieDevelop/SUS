@@ -273,3 +273,9 @@ Restartovat NFS servicu
 Pridat mount klientovi - do /remote_root/etc/fstab
 
     192.168.64.2:/home /home nfs udp,intr
+
+
+
+<p align="center">
+    <b><a href="https://github.com/rockieDevelop" target="_blank">rockieDevelop</a> 2021</b>
+</div>
