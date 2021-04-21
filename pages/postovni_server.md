@@ -45,14 +45,14 @@ V tomto pripade se sem napise adresa smtp serveru, pres ktery se maji posilat re
 Pro odzkouseni postfix serveru pouzivam utilitku telnet
 
     apt install telnet
-    telnet localhost 25 #z vypisu netstat vime ze to jede na portu 25
-    helo saf #vetsinou je vyzadovano pozdarveni "helo" a nejaky hostname
-    mail from: saf0068@saf0068.org #od kud posilame mail
-    rcpt to: saf0068@saf0068.org #komu posilame mail
-    data #directiva pro pocatek psani obsahu mailu
-    test1 #obsah mailu
-    . #ukonceni obsahu mailu
-    quit #opustit telnet
+    telnet localhost 25             #z vypisu netstat vime ze to jede na portu 25
+    helo saf                        #vetsinou je vyzadovano pozdarveni "helo" a nejaky hostname
+    mail from: saf0068@saf0068.org  #od kud posilame mail
+    rcpt to: saf0068@saf0068.org    #komu posilame mail
+    data                            #directiva pro pocatek psani obsahu mailu
+    test1                           #obsah mailu
+    .                               #ukonceni obsahu mailu
+    quit                            #opustit telnet
 
 postfix se pokusil odeslat email a protoze byl poslan na saf0068@saf0068.org tak ho najdeme ve /var/spool/mail
 
