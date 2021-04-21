@@ -16,6 +16,8 @@ v nasi DNS nastavime ip adresy smtp na nas postovni server /etc/bind/db.saf0068.
 
 ## instalace postovniho serveru Postfix 
     apt install postfix
+    
+    Internetovy pocitac -> mojedomena.cz
 
 Pro pouziti utilitky netstat
 
