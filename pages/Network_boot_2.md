@@ -184,7 +184,72 @@ Kopirujeme z / do /remote_boot (cp - zkopirovat, nic - staci vytvorit novou sloz
     tmp
     usr -> cp
     var -> cp
-
-
     
+v /remote_root zmenit prava slozce tmp
 
+    chmod 777 tmp/
+    chmod o+t tmp/
+
+### Konfigurace boot menu
+
+    cd /srv/tftp/
+
+Vytvorim si backup slozku do ktere presunu vsechno v te slozce
+
+Ted budeme zpatky kopirovat z /srv/tftp/bac do /srv/tftp
+
+    /srv/tftp/bac/debian-installer/amd64/pxelinux.cfg     - z tehle zkopirovane slozky nasledne smazu soubor default
+    /srv/tftp/bac/debian-installer/amd64/pxelinux.0
+    
+    /srv/tftp/bac/debian-installer/amd64/boot-screens/ldlinux.c32
+    /srv/tftp/bac/debian-installer/amd64/boot-screens/libcom32.c32
+    /srv/tftp/bac/debian-installer/amd64/boot-screens/libutil.c32
+    /srv/tftp/bac/debian-installer/amd64/boot-screens/vesamenu.c32
+    
+Zkopiruju jeste 
+    
+    /srv/tftp/bac/debian-installer/amd64/boot-screens/syslinux.cfg     do     /srv/tftp/pxelinux.cfg
+
+A prejmenuju na default
+
+    mv syslinux.cfg default
+    
+Soubor default ted prepisu na:
+    
+    DEFAULT vesamenu.c32
+    PROMPT 0
+
+    MENU TITLE  Boot Menu
+
+    LABEL Debian - NetBoot
+    KERNEL /Debian/vmlinuz-4.19.0-14-amd64      #od kud si ma stahnout kernel (z nasi slozky /srv/tftp/Debian) - jaky kernel si ma vzit z TFTP serveru
+    APPEND initrd=/Debian/initrd.img-4.19.0-14-amd64 root=/dev/nfs nfsroot=192.168.64.2:/remote_root ip=dhcp rw   #parametry ktere dame kernelu - initrd si veme ze serveru na dane ceste, root file system z NFS, namountuje root file system ze serveru z /remote_root, ip adresu ziska z DHCP serveru
+    
+Vytvorit slozku Debian v /srv/tftp a do tehle slozky prenest kernel
+
+    /boot/vmlinuz-4.19.0-14-amd64     zkopiruju do    /srv/tftp/Debian
+    /boot/initrd.img-4.19.0-14-amd64     zkopiruju do    /srv/tftp/Debian
+    
+Ted uz by mel vzdaleny pocitac bootovat nas kernel (ale jeste to uplne nepujde, ale bootovani by se melo spustit)
+
+### Uprava Root File Systemu vzdaleneho pocitace
+
+Soubor /remote_root/etc/network/interfaces zakomentovat:
+    
+    #allow-hotplug enp0s3 
+    #iface enp0s3 inet dhcp 
+    
+    #allow-hotplug enp0s8  
+    #iface enp0s8 inet static
+    #  address 192.168.64.2/24
+    
+Soubor /remote_root/etc/fstab zakomentovat: (nebude si mountovat root file system z disku, takze zadne UUID)
+    
+    #UUID=316ad501-828f-438f-af3f-36a8a0165f34 /               ext4    errors=remount-ro 0       1
+    #UUID=b95c8317-4bbc-4353-8d67-85243a0ee2a0 none            swap    sw              0       0
+    
+Jeste by se mely odstranit ze vzdaleneho PC konfigurace DHCP, TFTP, NFS ... (apt-get remove)
+
+Vypis mountu NFS
+    
+    mount | grep nfs
