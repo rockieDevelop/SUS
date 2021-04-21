@@ -27,12 +27,19 @@ Pro pouziti utilitky netstat
 ## Konfigurace Postfix serveru /etc/postfix/main.cf
 
 relay - odeslani emailu na jiny smtp sever
+
 smtpd_relay_restrictions - omezeni serveru pro relay
+
 myhostname - nazev smtp serveru
+
 myorigin - mailove jmeno
+
 mydestination - seznam domen, pro ktere dany server pracuje (diva se jestli cilova domena mailu neni jedna z tehle domen, protoze tohle jsou jeho domeny a muze tak dorucovat lokalne)
+
 mynetworks - moje site (pokud nekdo posila email z techto siti, pak muze delat relay jinak ne)
+
 relayhost - direktiva pro pripad ze tento postovni server funguje v ramci site, ve ktere je zakazano kontaktovat postovni servery na internetu.
+
 V tomto pripade se sem napise adresa smtp serveru, pres ktery se maji posilat relayovane emaily (kdyby bezel v ramci skolni site, musel by mit zde nastaven smtp server skoly).
 
 Pro odzkouseni postfix serveru pouzivam utilitku telnet
