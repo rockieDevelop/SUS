@@ -139,3 +139,52 @@ Chci namapovat root file system na system sdileni souboru po siti (NFS)
 
     apt install nfs-kernel-server
 
+Konfigurace v /etc/exports
+
+    /remote_root     192.168.64.0/24(rw,async,no_root_squash) # korenovy adresar toho pocitace ktery bootuje ze site - pro pocitace s IP adresou 192.168.64
+    
+Spustit servicu (a vytvorit korenovy adresar)
+    
+    mkdir /remote_root
+    service nfs-kernel-server restart
+    
+### Testovani funkcnosti:
+
+V /remote_root vytvorim soubor nnn (echo test_nfs > nnn)
+
+Na Testovacim PC:
+
+    apt install nfs-common
+    mount 192.168.64.2:/remote_root /mnt/
+    
+Ve slozce /mnt by ted mel byt nas soubor nnn (mame tam namapovany /remote_root, takze by to melo fungovat interaktivne)
+
+## Kopirovani Root File Systemu
+
+Kopirujeme z / do /remote_boot (cp - zkopirovat, nic - staci vytvorit novou slozku)
+
+    bin -> cp
+    boot -> cp
+    dev
+    etc -> cp
+    home
+    lib -> cp
+    lib32 -> cp
+    lib64 -> cp
+    libx32 -> cp
+    media
+    mnt
+    opt -> cp
+    proc
+    root -> cp
+    run
+    sbin -> cp
+    srv -> cp
+    sys
+    tmp
+    usr -> cp
+    var -> cp
+
+
+    
+
