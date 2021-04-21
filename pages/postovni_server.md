@@ -147,9 +147,7 @@ pomoci utilitky netstat zjistime ze dovecot funguje na portech 993 a 143
 muzeme overit treba pomoci thunderbird aplikace
     
 ## web-based klient
- upravime LAMP server
- 
-    apt install roundcube
+upravime LAMP server
 
 vytvorim tabulky pro uzivatele
 
@@ -162,6 +160,10 @@ vytvorim tabulky pro uzivatele
     CREATE DATABASE roundcube;
     use roundcube
     GRANT ALL ON roundcube.* TO roundcube@localhost;
+    
+Ted nainstaluju roundcube
+
+    apt install roundcube
     
 ### vytvoreni virtualni domeny pro roundcube /etc/apache2/sites-available
 
