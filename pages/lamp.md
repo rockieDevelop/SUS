@@ -16,7 +16,7 @@
 ## instalace apache
     apt update
     apt install apache2
-    apt install apache2-mod-php
+    apt install libapache2-mod-php
     service apache2 restart
 
 stranky se nachazeji v /var/www/html
