@@ -143,6 +143,8 @@ MediaWiki potrebuje doinstalovat balicky mbstring, xml a k php jeste pridat podp
     apt install php-xml
     apt install php-mysql
     
+    service apache2 restart
+    
 Po nastaveni MediaWiki stahnout LocalSettings.php do /var/www/wiki.saf0068.org
 
     scp LocalSettings.php saf0068@www.saf0068.org
