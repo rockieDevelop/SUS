@@ -116,5 +116,26 @@ Po kazde zmene v DHCP serveru je dobre zkontrolovat zda je konfigurace spravna
 Restart DHCP
 
     service isc-dhcp-server restart
+    
+### pxelinux
+Stahnnu a rozbalim pxelinux
 
+    apt install wget
+    wget http://ftp.debian.org/debian/dists/stretch/main/installer-amd64/current/images/netboot/netboot.tar.gz
+    gzip -d netboot.tar.gz
+    tar -xf netboot.tar
+    
+## PC bez disku - PC pro netboot
+
+Vytvorim nove PC bez virtualniho disku
+
+Nastaveni site - 1 sitova karta s VBOXNet1 (sit pouze s hostem, bez DHCP)
+Nastaveni systemu - poradi bootovani dat jenom sit
+
+Pokud nebude fungovat - vyzkouset restartovani PC, restartovat servicu isc-dhcp-server (dhcpd -t)
+
+## NFS
+Chci namapovat root file system na system sdileni souboru po siti (NFS)
+
+    apt install nfs-kernel-server
 
