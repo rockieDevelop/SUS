@@ -126,6 +126,9 @@ ted chceme zakazat defaultni stranky a povolit ty nase vytvorene
 ## zprovozneni MediaWiki
 stahnu MediaWiki
 
+    wget -o mediawiki.zip https://releases.wikimedia.org/mediawiki/1.35/mediawiki-1.35.1.zip
+    unzip mediawiki.zip -d /var/www/wiki
+
 nakopiruju do /var/www
 
 smazu wiki.saf0068.org
