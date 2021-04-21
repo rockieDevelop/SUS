@@ -173,6 +173,8 @@ Ted nainstaluju roundcube
 povoleni domeny
 
     a2ensite roundcube.saf0068.org
+    
+    service apache2 reload
 
 ve /var/www vytvorit symbolicky link na misto kde je roundcube umisten
 
