@@ -141,8 +141,8 @@ pomoci utilitky netstat zjistime ze dovecot funguje na portech 993 a 143
 
     imap    IN  CNAME   smtp.saf0068.org.
 
-    _imap._tcp  IN  SRV 1   2   143 imap.saf0068.org ; _http sluzba, _tcp protokol, 1 priorita, 2 vaha  #pokud pro domenu saf0068.org chces pouzit protokol IMAP, tak se zeptej serveru imap.saf0068.org na portu 143
-    _smtp._tcp  IN  SRV 1   2   25  smtp.saf0068.org    # pokud chces pouzit server odchozi posty SMTP, pak pouzij na portu 25 smtp.saf0068.org
+    _imap._tcp  IN  SRV 1   2   143 imap.saf0068.org. ; _http sluzba, _tcp protokol, 1 priorita, 2 vaha  #pokud pro domenu saf0068.org chces pouzit protokol IMAP, tak se zeptej serveru imap.saf0068.org na portu 143
+    _smtp._tcp  IN  SRV 1   2   25  smtp.saf0068.org.    # pokud chces pouzit server odchozi posty SMTP, pak pouzij na portu 25 smtp.saf0068.org
     
 muzeme overit treba pomoci thunderbird aplikace
     
