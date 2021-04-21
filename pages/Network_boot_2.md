@@ -260,6 +260,16 @@ Upravit soubor /srv/tftp/pxelinux.cfg/default
 
     APPEND initrd=/Debian/initrd.img-4.19.0-14-amd64 root=/dev/nfs nfsroot=192.168.64.2:/remote_root,udp ip=dhcp rw
     
-### Mountovani dalsich slozek (treba home pro uzivatele)
+### Mountovani dalsich slozek (treba home)
 
+Pridat do /etc/exports
     
+    /home 192.168.64.0/24(rw,async)
+
+Restartovat NFS servicu
+    
+    service nfs-kernel-server restart
+
+Pridat mount klientovi - do /remote_root/etc/fstab
+
+    192.168.64.2:/home /home nfs udp,intr
