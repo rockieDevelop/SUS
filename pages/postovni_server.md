@@ -182,6 +182,10 @@ v DNS konfiguraci potreba pripsat CNAME na roundcube
     
     roundcube   IN  CNAME   lamp.saf0068.org.
     
+ Nezapomenout restartovat bind9 servicu
+ 
+    service bind9 restart
+    
 ### Konfigurace roundcubu /etc/roundcube/config.inc.php
 
     $config['default_host'] = 'imap.saf0068.org';
