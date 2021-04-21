@@ -214,7 +214,7 @@ A prejmenuju na default
 
     mv syslinux.cfg default
     
-Soubor default ted prepisu na:
+Soubor default ted prepisu na (cely obsah smazat a nahodit tohle):
     
     DEFAULT vesamenu.c32
     PROMPT 0
@@ -250,6 +250,16 @@ Soubor /remote_root/etc/fstab zakomentovat: (nebude si mountovat root file syste
     
 Jeste by se mely odstranit ze vzdaleneho PC konfigurace DHCP, TFTP, NFS ... (apt-get remove)
 
-Vypis mountu NFS
+Vypis mountu NFS (abych videl Root File System)
     
     mount | grep nfs
+
+### Uprava konfigurace komunikace z TCP na UDP protokol
+
+Upravit soubor /srv/tftp/pxelinux.cfg/default
+
+    APPEND initrd=/Debian/initrd.img-4.19.0-14-amd64 root=/dev/nfs nfsroot=192.168.64.2:/remote_root,udp ip=dhcp rw
+    
+### Mountovani dalsich slozek (treba home pro uzivatele)
+
+    
