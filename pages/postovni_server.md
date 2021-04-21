@@ -58,7 +58,7 @@ postfix se pokusil odeslat email a protoze byl poslan na saf0068@saf0068.org tak
 
 stejne to jde odzkouset treba na nasem virtualu, kde pres terminal pouzijeme opet utilitku telnet na adresu smtp.saf0068.org port 25
 
-### pridani site
+### pridani site (/etc/postfix/main.cf)
 
 proste pripiseme do mynetwork sit, napr.: 192.168.56.0/24
 
