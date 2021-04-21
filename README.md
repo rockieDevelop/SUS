@@ -16,7 +16,7 @@ Will be updated continuously.
     2. [Bash file](pages/BashFile.md)
     3. [Service file](pages/ServiceFile.md)
     4. [Building kernel](pages/BuildingKernel.md)
-    5. [Network boot](pages/NetworkBoot.md) nebo [Network boot2](pages/Network_boot_2.md)
+    5. [Network boot](pages/NetworkBoot.md) or [Network boot2](pages/Network_boot_2.md)
     6. [DNS Server](pages/DNSServer.md)
     7. [Lamp](pages/lamp.md)
     8. [Postovni Server](pages/postovni_server.md)
