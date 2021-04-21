@@ -161,7 +161,7 @@ vytvorim tabulky pro uzivatele
     use roundcube
     GRANT ALL ON roundcube.* TO roundcube@localhost;
     
-Ted nainstaluju roundcube
+Ted nainstaluju roundcube (prepinani terminal tabu alt + f1...f12)
 
     apt install roundcube
     
