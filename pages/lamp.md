@@ -2,6 +2,11 @@
 
 ### nastavime ip nasi dns /etc/resolv.conf
     nameserver 192.168.56.101
+    
+pro win - potreba jeste flushnout DNS
+
+    ipconfig /flushdns
+    ipconfig /registerdns
 
 ### upravime interfacy /etc/network/interfaces
     allow-hotplug enp0s3
