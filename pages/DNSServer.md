@@ -63,6 +63,8 @@
                    IN      SRV     5 3 80  www2.example.cz.
 
     *._tcp         IN      SRV     0 0 0   .  ;ostatní služby nejsou podporovány
+    
+(pozn. - SRV záznam se využívá ke specifikaci serveru, který se stará o konkrétní službu pro danou doménu)
 
 ### odkaz na zonovy soubor v named.conf.local
     zone "example.cz" {
